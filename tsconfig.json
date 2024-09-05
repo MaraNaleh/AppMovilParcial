@@ -4,7 +4,7 @@
     "strict": true,
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"  // Asegúrate de que la ruta coincida con tu estructura de carpetas
       ]
     }
   },

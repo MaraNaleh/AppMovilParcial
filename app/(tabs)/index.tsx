@@ -1,31 +1,22 @@
-import { StyleSheet } from 'react-native';
+// app/tabs/_layout.tsx
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Componente01 from '../Componente01';
+import Props02 from '../Props02';
+import Axios03 from '../Axios03';
+import AsyncStorage04 from '../AsyncStorage04';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+const Tab = createBottomTabNavigator();
 
-export default function TabOneScreen() {
+const Layout = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Componente01" component={Componente01} />
+      <Tab.Screen name="Props02" component={Props02} />
+      <Tab.Screen name="Axios03" component={Axios03} />
+      <Tab.Screen name="AsyncStorage04" component={AsyncStorage04} />
+    </Tab.Navigator>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+export default Layout;
