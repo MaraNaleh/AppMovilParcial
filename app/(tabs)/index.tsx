@@ -1,22 +1,22 @@
-// app/tabs/_layout.tsx
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Componente01 from '../Componente01';
-import Props02 from '../Props02';
-import Axios03 from '../Axios03';
-import AsyncStorage04 from '../AsyncStorage04';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import ComponenteParcial01 from '../ComponenteParcial01';
+import PropsParcial02 from '../PropsParcial02';
+import AxiosParcial03 from '../AxiosParcial03';
+import AsyncStorageParcial04 from '../AsyncStorageParcial04';
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-const Layout = () => {
+export default function App() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Componente01" component={Componente01} />
-      <Tab.Screen name="Props02" component={Props02} />
-      <Tab.Screen name="Axios03" component={Axios03} />
-      <Tab.Screen name="AsyncStorage04" component={AsyncStorage04} />
-    </Tab.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="ComponenteParcial01">
+        <Stack.Screen name="ComponenteParcial01" component={ComponenteParcial01} />
+        <Stack.Screen name="Props02" component={PropsParcial02} />
+        <Stack.Screen name="Axios03" component={AxiosParcial03} />
+        <Stack.Screen name="AsyncStorage04" component={AsyncStorageParcial04} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-
-export default Layout;
+}
